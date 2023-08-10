@@ -12,6 +12,8 @@ import plotly.graph_objects as go
 from collections import defaultdict
 from scipy.spatial.distance import cdist
 import time
+import warnings
+warnings.filterwarnings("ignore")
 
 cid = 'cdb0a1aa1fc24842b9d98603fab657be'
 secret = 'e421b4cb445b45dd8ea9635ba9892c22'
@@ -100,8 +102,8 @@ def recommend_songs(song_list, spotify_data, n_songs=10):
     # Using KMeans to cluster data, fitting and adding labels to dataset
     X = spotify_data.select_dtypes(np.number)
     cluster_pipeline = Pipeline([('scaler', StandardScaler()), ('kmeans', KMeans(n_clusters=3))])
-    cluster_pipeline.fit(X)
-    cluster_labels = cluster_pipeline.predict(X)
+    cluster_pipeline.fit(X.values)
+    cluster_labels = cluster_pipeline.predict(X.values)
     spotify_data['cluster'] = cluster_labels
 
     # Scaling and transforming numerical columns of data and reshaped song center
@@ -120,11 +122,11 @@ def recommend_songs(song_list, spotify_data, n_songs=10):
     df_recs = pd.DataFrame(rec_songs[metadata_cols])
     return df_recs
 
-st.title('Recommendations from Four Tet')
-st.write('Generate song recommendations from DJ and producer Four Tet, '
-         'based on his popular Spotify playlist.')
+# st.title('Recommendations from Four Tet')
+# st.write('Generate song recommendations from DJ and producer Four Tet, '
+#          'based on his popular Spotify playlist.')
 
-components.iframe("https://open.spotify.com/embed/playlist/2uzbATYxs9V8YQi5lf89WG", width=700, height=300)
+# components.iframe("https://open.spotify.com/embed/playlist/2uzbATYxs9V8YQi5lf89WG", width=700, height=300)
 
 st.write('## How It Works')
 st.write('Fill in up to three songs and artists of your choice, or use the sidebar to adjust audio features '
