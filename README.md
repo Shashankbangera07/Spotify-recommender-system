@@ -4,7 +4,7 @@ colorFrom: red
 colorTo: green
 sdk: streamlit
 sdk_version: 1.25.0
-app_file: app.py
+app_file: streamlit_app.py
 pinned: false
 
 # Spotify Recommendation System and Streamlit Web App
