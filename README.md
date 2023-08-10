@@ -1,3 +1,12 @@
+title: Spotify Recommender System
+emoji: 🐢
+colorFrom: red
+colorTo: green
+sdk: streamlit
+sdk_version: 1.25.0
+app_file: app.py
+pinned: false
+
 # Spotify Recommendation System and Streamlit Web App
 
 ## Introduction and Project Goals
