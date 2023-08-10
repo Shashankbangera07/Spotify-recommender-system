@@ -1,7 +1,7 @@
 ---
-title: Spotify Recommender System
-emoji: 🐢
-colorFrom: red
+title: Spotify Recommender System Final Project
+emoji: 🌍
+colorFrom: indigo
 colorTo: green
 sdk: streamlit
 sdk_version: 1.25.0
