@@ -15,10 +15,10 @@ import time
 import warnings
 warnings.filterwarnings("ignore")
 
-# cid = 'cdb0a1aa1fc24842b9d98603fab657be'
-# secret = 'e421b4cb445b45dd8ea9635ba9892c22'
-cid = st.secrets['client_id']
-secret = st.secrets['client_secret']
+cid = 'cdb0a1aa1fc24842b9d98603fab657be'
+secret = 'e421b4cb445b45dd8ea9635ba9892c22'
+# cid = st.secrets['client_id']
+# secret = st.secrets['client_secret']
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager
 =
