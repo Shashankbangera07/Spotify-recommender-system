@@ -22,15 +22,15 @@ Spotify creators and artists rely on user interaction to increase traffic on the
 
 We will be using a 1700+ row dataset collected from the Spotify API and consisting of songs from a playlist from DJ and producer Four Tet, which can be found in the above CSV file. The dataset consists of descriptive metadata (track name, artist name) as well as numerical audio features which we will use for modeling (acousticness, danceability, duration, energy, instrumentalness, liveness, loudness, tempo and valence).
 
-We will test our models on two additional smaller playlists to evaluate its feasability with different-sized datasets - Spotify's ["Songs to Sing in the Shower"](https://github.com/JonahFlateman/capstone/blob/main/showersongs.csv) (200 rows) and Max Richter's ["Kitchen Playlist"](https://github.com/JonahFlateman/capstone/blob/main/maxrichter.csv) (78 rows).
+We will test our models on two additional smaller playlists to evaluate its feasability with different-sized datasets - Spotify's ["Songs to Sing in the Shower"] (200 rows) and Max Richter's ["Kitchen Playlist"] (78 rows).
 
 
 ## Navigating This Repository
 
-* [Using Spotify API](https://github.com/JonahFlateman/capstone/blob/main/playlist_to_dataframe.ipynb) - using Spotipy to retrieve playlist tracks by creator and playlist URI, obtaining track ID and audio features and converting to DataFrame
-* [Data Wrangling, Scaling, Modeling and Clustering](https://github.com/JonahFlateman/capstone/blob/main/clustering_and_modeling.ipynb) - isolating and scaling numeric features using KMeans to cluster and Plotly to visualize, creating confusion matrix and LIME visualization of Logistic Regression binary classification model
-* [Building Recommendation System](https://github.com/JonahFlateman/capstone/blob/main/recommender.ipynb) - using model and Spotipy, retrieve tracks and calculate vectors and cosine distances to build recommender
-* [Streamlit App](https://github.com/JonahFlateman/capstone/blob/main/streamlit_app.py) - code used for building web app, includes features for user input in text boxes and sidebar, description for audio features
+* [Using Spotify API]() - using Spotipy to retrieve playlist tracks by creator and playlist URI, obtaining track ID and audio features and converting to DataFrame
+* [Data Wrangling, Scaling, Modeling and Clustering] - isolating and scaling numeric features using KMeans to cluster and Plotly to visualize, creating confusion matrix and LIME visualization of Logistic Regression binary classification model
+* [Building Recommendation System] - using model and Spotipy, retrieve tracks and calculate vectors and cosine distances to build recommender
+* [Streamlit App] - code used for building web app, includes features for user input in text boxes and sidebar, description for audio features
 
 ## Obtaining Playlist Data
 
@@ -59,7 +59,7 @@ Separating out audio features in our dataset, we calculate the mean vector of a 
 
 We deploy the model using a Streamlit web app. In Streamlit the model can give recommendations in two ways. First a user has the option to adjust audio features manually using a sidebar; the app will search the existing playlist, find the song with the closest audio features for its input and provide the recommendation. A user may also enter up to three songs of their choosing, and the app will search Spotify for its data. In both cases the Spotify-embedded tracks will return and the user can listen in-app.
 
-[Access the Streamlit app here](https://share.streamlit.io/jonahflateman/spotify-recommendation-system/main)
+
 
 ## Business Recommendations
 
